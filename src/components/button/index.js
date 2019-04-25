@@ -9,14 +9,18 @@ class Button extends Component {
     }
 
     handleClick = () => {
-        this.props.func();
+        this.props.func(!this.props.gameOver);
+        !this.props.gameOver && this.disableBtn();
+    }
+
+    disableBtn = () => {
         let btnElem = document.querySelector('#multi-btn');
         btnElem.disabled = true;
-
         setTimeout(() => {
             btnElem.disabled = false;
         }, 2100);
     }
+
     render() {
         return (
             <Container

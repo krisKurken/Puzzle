@@ -22,8 +22,12 @@ class Game extends Component {
         }
     }
 
-    scrambleBoard = async () => {
-        this.setState({scramble: true});
+    componentDidMount(){
+        this.scrambleBoard();
+    }
+
+    scrambleBoard = async (animation = false) => {
+        animation && this.setState({scramble: true});
         await this.solveBoard();
         let newBoard = this.state.board;
 
@@ -78,7 +82,7 @@ class Game extends Component {
                 <Wrapper>
                     <Button
                         text={this.state.gameOver ? 'Play again' : 'Shuffle'}
-                        func={this.state.gameOver ? this.resetGame : this.scrambleBoard}
+                        func={this.scrambleBoard}
                         gameOver={this.state.gameOver}
                     />
                 </Wrapper>

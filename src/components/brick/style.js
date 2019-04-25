@@ -21,7 +21,7 @@ animation: ${
     props.moved === -4 && css`${moveDown} .5s ease`
 };
 transform: ${props => props.scramble && 'rotate(360deg)'};
-transition: transform .5s ease;
+transition: transform 1s ease;
 @media (max-width: 450px) {
     height: 48px;
     width: 48px;
@@ -41,15 +41,17 @@ font-weight: bold;
 font-size: 20px;
 font-family: 'openSans bold';
 user-select: none;
-animation: ${props => props.scramble && css`${hideAndShow} 3s ease`};
+animation: ${props => props.scramble && css`${hideAndShow} 1s ease`};
 `;
 
 const hideAndShow = keyframes`
-from {
+0% {
     opacity: 0;
 }
-
-to {
+20% {
+    opacity: 0;
+}
+100% {
     opacity: 1;
 }
 `;
