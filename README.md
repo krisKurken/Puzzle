@@ -12,7 +12,3 @@ A minimal game made in react(create-react-app) with the help of styled component
     - Run npm start
     - And enjoy!
 
-### License
-
-  This project is licensed under the MIT License - see the [LICENSE](license.md) file for details.
-
