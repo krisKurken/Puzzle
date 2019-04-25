@@ -15,7 +15,7 @@ class Button extends Component {
 
         setTimeout(() => {
             btnElem.disabled = false;
-        }, 2200);
+        }, 2100);
     }
     render() {
         return (

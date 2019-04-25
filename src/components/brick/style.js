@@ -21,7 +21,7 @@ animation: ${
     props.moved === -4 && css`${moveDown} .5s ease`
 };
 transform: ${props => props.scramble && 'rotate(360deg)'};
-transition: transform .9s ease;
+transition: transform .5s ease;
 @media (max-width: 450px) {
     height: 48px;
     width: 48px;
