@@ -12,8 +12,8 @@ class Board extends Component {
 
     checkMove = (pos, value) => {
         let diff = this.props.emptyPos - pos;
-
-        if (Math.abs(diff) === 1 || Math.abs(diff) === 4) {
+        let endCase = (pos % 4 === 0 && diff === 1) || (pos % 4 === 1 && diff === -1)
+        if ((Math.abs(diff) === 1 && !endCase) || Math.abs(diff) === 4) {
             let board = this.props.board;
             board[this.props.emptyPos-1] = value;
             board[pos-1] = false;
